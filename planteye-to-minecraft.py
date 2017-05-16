@@ -70,9 +70,10 @@ def draw_plant(minecraft, plydata):
 	for i in range(0, 2 * MAX_XZ):
 		for j in range(0, MAX_Y):
 			for k in range(0, 2 * MAX_XZ):
+				#print(i,j,k,counts[i][j][k])
 				if counts[i][j][k] > POINT_COUNT:
 					# Colour top half light green, bottom half dark green
-					mc.setBlock(i-MAX_XZ, MAX_Y - j, k-MAX_XZ, block.WOOL.id, 13 if j > MAX_Y/2 else 5)
+					mc.setBlock(i-MAX_XZ, MAX_Y - j, k-MAX_XZ, block.WOOL.id if counts[i][j][k] > THICK_POINT_COUNT else block.BEDROCK_INVISIBLE.id, 13 if j > MAX_Y/2 else 5)
 
 
 
@@ -89,6 +90,7 @@ h_max = 1100
 
 # Number of points required in minecraft block to print it.
 POINT_COUNT = 1
+THICK_POINT_COUNT = 3
 
 # Create minecraft connection and draw
 mc = minecraft.Minecraft.create()
