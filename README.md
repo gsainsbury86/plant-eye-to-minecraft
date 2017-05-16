@@ -12,3 +12,5 @@ Can be installed with pip install plyfile
 Didn't require moving to python 2.6. 2.7 was fine.
 
 recommended server.properties for craftbukkit included
+
+Usage: python planteye-to-minecraft.py </path/to/plant-eye-file.ply>
